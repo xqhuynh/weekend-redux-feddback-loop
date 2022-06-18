@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 5400;
+// import router
+const feedBackRouter = require("./routes/feedback.router");
 
 /** ---------- MIDDLEWARE ---------- **/
 app.use(bodyParser.json());
@@ -9,6 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("build"));
 
 /** ---------- EXPRESS ROUTES ---------- **/
+app.use("/feedback", feedBackRouter);
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {
