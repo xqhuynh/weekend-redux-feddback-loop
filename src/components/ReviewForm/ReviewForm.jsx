@@ -10,6 +10,7 @@ function ReviewForm({ getFeedback }) {
   const dispatch = useDispatch();
   // useSelector for feedBackDataToStore() in store
   const feedback = useSelector((store) => store.feedBackDataToStore);
+  // console log feedback object to verify it worked
   console.log("Feedback object is", feedback);
 
   // Axios POST to add data to db after submit button clicked
@@ -39,12 +40,10 @@ function ReviewForm({ getFeedback }) {
       <h2>Review Your Feedback</h2>
       <h3>Feelings: {feedback.feelingForm}</h3>
       <h3>Understanding: {feedback.understandingForm}</h3>
-      <h3>Support:{feedback.supportedForm}</h3>
-      <h3>Comments:{feedback.commentsForm}</h3>
+      <h3>Support: {feedback.supportedForm}</h3>
+      <h3>Comments: {feedback.commentsForm}</h3>
       <form onSubmit={onSubmitFeedback}>
-        <Link to={"/success-form"}>
-          <button type="submit">Submit</button>
-        </Link>
+        <button type="submit">Submit</button>
       </form>
     </>
   );

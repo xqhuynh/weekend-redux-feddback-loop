@@ -9,7 +9,7 @@ function FeelingForm() {
   const history = useHistory();
   const dispatch = useDispatch();
   // useSelector for feedBackDataToStore() in store
-  const feedback = useSelector((store) => store.feedbackDataToStore);
+  const feedback = useSelector((store) => store.feedBackDataToStore);
 
   // function to handle 'next' button click
   const handleSubmit = (evt) => {
@@ -35,13 +35,9 @@ function FeelingForm() {
             dispatch({ type: "SET_FEELING_FORM", payload: event.target.value })
           }
           type="number"
-          min="0"
-          max="5"
           required
         />
-        <Link to={"/second-form"}>
-          <button type="submit">Next</button>
-        </Link>
+        <button>Next</button>
       </form>
     </>
   );

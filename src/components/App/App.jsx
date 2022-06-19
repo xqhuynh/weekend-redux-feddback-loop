@@ -8,7 +8,7 @@ import UnderstandingForm from "../UnderstandingForm/UnderstandingForm";
 import SupportedForm from "../SupportedForm/SupportedForm";
 import CommentsForm from "../CommentsForm/CommentsForm";
 import ReviewForm from "../ReviewForm/ReviewForm";
-import SuccessForm from "../SuccessForm/SucessForm";
+import SuccessForm from "../SuccessForm/SuccessForm";
 import { useDispatch } from "react-redux";
 
 function App() {
@@ -48,7 +48,7 @@ function App() {
           <CommentsForm />
         </Route>
         <Route path="/review-form">
-          <ReviewForm getFeedback={getFeedback} />
+          <ReviewForm />
         </Route>
         <Route path="/success-form">
           <SuccessForm />

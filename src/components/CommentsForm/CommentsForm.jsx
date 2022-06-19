@@ -9,7 +9,7 @@ function CommentsForm() {
   const history = useHistory();
   const dispatch = useDispatch();
   // useSelector for feedBackDataToStore() in store
-  const feedback = useSelector((store) => store.feedbackDataToStore);
+  const feedback = useSelector((store) => store.feedBackDataToStore);
 
   // function to handle 'next' button click
   const handleSubmit = (evt) => {
@@ -33,9 +33,7 @@ function CommentsForm() {
           }
           type="text"
         />
-        <Link to={"/review-form"}>
-          <button type="submit">Next</button>
-        </Link>
+        <button type="submit">Next</button>
       </form>
     </>
   );

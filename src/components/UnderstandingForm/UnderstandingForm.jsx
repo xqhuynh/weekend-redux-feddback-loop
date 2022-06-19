@@ -9,7 +9,7 @@ function UnderstandingForm() {
   const history = useHistory();
   const dispatch = useDispatch();
   // useSelector for feedBackDataToStore() in store
-  const feedback = useSelector((store) => store.feedbackDataToStore);
+  const feedback = useSelector((store) => store.feedBackDataToStore);
 
   // function to handle 'next' button click
   const handleSubmit = (evt) => {
@@ -37,13 +37,9 @@ function UnderstandingForm() {
             })
           }
           type="number"
-          min="0"
-          max="5"
           required
         />
-        <Link to={"/third-form"}>
-          <button type="submit">Next</button>
-        </Link>
+        <button type="submit">Next</button>
       </form>
     </>
   );

@@ -9,7 +9,7 @@ function SupportedForm() {
   const history = useHistory();
   const dispatch = useDispatch();
   // useSelector for feedBackDataToStore() in store
-  const feedback = useSelector((store) => store.feedbackDataToStore);
+  const feedback = useSelector((store) => store.feedBackDataToStore);
 
   // function to handle 'next' button click
   const handleSubmit = (evt) => {
@@ -37,13 +37,9 @@ function SupportedForm() {
             })
           }
           type="number"
-          min="0"
-          max="5"
           required
         />
-        <Link to={"/comments-form"}>
-          <button type="submit">Next</button>
-        </Link>
+        <button type="submit">Next</button>
       </form>
     </>
   );
