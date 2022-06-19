@@ -1,6 +1,7 @@
 import Header from "../Header/Header";
-import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import swal from "sweetalert";
 
 function FeelingForm() {
@@ -8,22 +9,16 @@ function FeelingForm() {
   const history = useHistory();
   const dispatch = useDispatch();
   // useSelector for feedBackDataToStore() in store
-  const feedbackObject = useSelector((store) => store.feedbackDataToStore);
+  const feedback = useSelector((store) => store.feedbackDataToStore);
 
   // function to handle 'next' button click
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    // Conditional to check if number entered is between 0 and 5 inclusive
-    switch (
-      feedbackObject.feelingForm >= 0 &&
-      feedbackObject.feelingForm <= 5
-    ) {
-      case history.push("/UnderstandingForm"):
-        break;
-      default:
-        swal("Please select a number between 1 and 5", {
-          button: "Sure thing!",
-        });
+    if (feedback.feelingForm >= 0 && feedback.feelingForm <= 5) {
+      // direct to next form with useHistory hook
+      history.push("/second-form");
+    } else {
+      alert("Please enter a number between 0 and 5");
     }
   };
 
@@ -40,11 +35,14 @@ function FeelingForm() {
             dispatch({ type: "SET_FEELING_FORM", payload: event.target.value })
           }
           type="number"
+          min="0"
+          max="5"
           required
         />
+        <Link to={"/second-form"}>
+          <button type="submit">Next</button>
+        </Link>
       </form>
-
-      <button type="submit">Next</button>
     </>
   );
 }
