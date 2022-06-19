@@ -16,7 +16,20 @@ function App() {
   const dispatch = useDispatch();
   // Axios GET to retrive data from db
   const getFeedback = () => {
-    axios({});
+    axios({
+      method: "GET",
+      url: "/feedback",
+    }).then((response) => {
+      console.log("GET feedback info", response);
+      // response is feedback objects
+      // dispatch it to storedFeedback reducer
+      dispatch({
+        type: "GET_FEEDBACK_INFO",
+        payload: response.data,
+      }).catch((err) => {
+        console.log("Error getting data", err);
+      });
+    });
   };
 
   return (
@@ -35,7 +48,7 @@ function App() {
           <CommentsForm />
         </Route>
         <Route path="/review-form">
-          <ReviewForm />
+          <ReviewForm getFeedback={getFeedback} />
         </Route>
         <Route path="/success-form">
           <SuccessForm />
