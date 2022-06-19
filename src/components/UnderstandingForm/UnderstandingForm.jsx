@@ -26,6 +26,7 @@ function UnderstandingForm() {
     <>
       <Header />
       <h3>How well are you understanding the content?</h3>
+      <h4>Scale of 0 to 5 with 5 being excellent</h4>
       <p>Understanding?</p>
       <form onSubmit={handleSubmit}>
         {/* use dispatch and set type to 'SET_UNDERSTANDING_FORM' */}

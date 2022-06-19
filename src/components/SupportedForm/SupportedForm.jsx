@@ -26,6 +26,7 @@ function SupportedForm() {
     <>
       <Header />
       <h3>How well are you being supported?</h3>
+      <h4>Scale of 0 to 5 with 5 being excellent</h4>
       <p>Support?</p>
       <form onSubmit={handleSubmit}>
         {/* use dispatch and set type to 'SET_SUPPORTED_FORM' */}

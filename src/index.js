@@ -8,15 +8,15 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import logger from "redux-logger";
 
 // Reducer to get feedback data from user
-const storedFeedback = (state = [], action) => {
-  switch (action.type) {
-    // GET dispatch action
-    case "GET_FEEDBACK_INFO":
-      return action.payload;
-    default:
-      return state;
-  }
-};
+// const storedFeedback = (state = [], action) => {
+//   switch (action.type) {
+//     // GET dispatch action
+//     case "GET_FEEDBACK_INFO":
+//       return action.payload;
+//     default:
+//       return state;
+//   }
+// };
 
 // Reducer to store feedback object
 const feedBackDataToStore = (
@@ -53,7 +53,6 @@ const feedBackDataToStore = (
 // redux store
 const store = createStore(
   combineReducers({
-    storedFeedback,
     feedBackDataToStore,
   }),
   applyMiddleware(logger)

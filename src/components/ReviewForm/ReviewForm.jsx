@@ -4,31 +4,31 @@ import { Link } from "react-router-dom";
 import swal from "sweetalert";
 import axios from "axios";
 
-function ReviewForm({ getFeedback }) {
-  // Need: useHistory, useDispatch, useSelector hooks
+function ReviewForm() {
+  // Need: useHistory, useSelector hooks
   const history = useHistory();
-  const dispatch = useDispatch();
   // useSelector for feedBackDataToStore() in store
   const feedback = useSelector((store) => store.feedBackDataToStore);
   // console log feedback object to verify it worked
   console.log("Feedback object is", feedback);
 
-  // Axios POST to add data to db after submit button clicked
-  const onSubmitFeedback = (evt) => {
+  const onHandleSubmit = (evt) => {
     evt.preventDefault();
+    history.push("/success-form");
+    // Call postFeedback() on submit
+    postFeedback();
+  };
+
+  // Axios POST to add data to db after submit button clicked
+  // Takes user back to first form
+  const postFeedback = () => {
     axios({
       method: "POST",
-      url: "/feedback",
+      url: "/",
       data: feedback,
     })
       .then((response) => {
-        console.log("Add new feedback successful", response);
-        console.log("Feedback is", feedback);
-        // dispatch action to clear reducer that stored feedback info
-        dispatch({
-          type: "CLEAR_FEEDBACK",
-        });
-        history.push("/success-form");
+        console.log("Successfully added feedback to db", response);
       })
       .catch((err) => {
         console.log("Error adding feedback", err);
@@ -42,9 +42,9 @@ function ReviewForm({ getFeedback }) {
       <h3>Understanding: {feedback.understandingForm}</h3>
       <h3>Support: {feedback.supportedForm}</h3>
       <h3>Comments: {feedback.commentsForm}</h3>
-      <form onSubmit={onSubmitFeedback}>
-        <button type="submit">Submit</button>
-      </form>
+      <button onClick={onHandleSubmit} type="button">
+        Submit
+      </button>
     </>
   );
 }
