@@ -8,7 +8,7 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import logger from "redux-logger";
 
 // Reducer to get feedback data from user
-const feedBackReducer = (state = [], action) => {
+const storedFeedback = (state = [], action) => {
   switch (action.type) {
     // GET dispatch action
     case "GET_FEEDBACK_INFO":
@@ -18,10 +18,36 @@ const feedBackReducer = (state = [], action) => {
   }
 };
 
+// Reducer to store feedback object
+const feedBackToStore = (
+  state = {
+    feelingForm: 0,
+    understandingForm: 0,
+    supportedForm: 0,
+    commentsForm: "",
+  },
+  action
+) => {
+  // Switch statement for each form dispatch
+  switch (action.type) {
+    case "SET_FEELING_FORM":
+      return { ...state, feelingForm: action.payload };
+    case "SET_UNDERSTANDING_FORM":
+      return { ...state, understandingForm: action.payload };
+    case "SET_SUPPORTED_FORM":
+      return { ...state, supportedForm: action.payload };
+    case "SET_COMMENTS_FORM":
+      return { ...state, commentsForm: action.payload };
+    default:
+      return state;
+  }
+};
+
 // redux store
 const store = createStore(
   combineReducers({
-    feedBackReducer,
+    storedFeedback,
+    feedBackToStore,
   }),
   applyMiddleware(logger)
 );
