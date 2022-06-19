@@ -19,7 +19,7 @@ const storedFeedback = (state = [], action) => {
 };
 
 // Reducer to store feedback object
-const feedBackToStore = (
+const feedBackDataToStore = (
   state = {
     feelingForm: 0,
     understandingForm: 0,
@@ -47,7 +47,7 @@ const feedBackToStore = (
 const store = createStore(
   combineReducers({
     storedFeedback,
-    feedBackToStore,
+    feedBackDataToStore,
   }),
   applyMiddleware(logger)
 );
