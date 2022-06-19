@@ -38,6 +38,13 @@ const feedBackDataToStore = (
       return { ...state, supportedForm: action.payload };
     case "SET_COMMENTS_FORM":
       return { ...state, commentsForm: action.payload };
+    case "CLEAR_FEEDBACK":
+      return {
+        feelingForm: "",
+        understandingForm: "",
+        supportedForm: "",
+        commentsForm: "",
+      };
     default:
       return state;
   }
