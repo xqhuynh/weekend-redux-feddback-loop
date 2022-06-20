@@ -28,6 +28,8 @@ This project consists of 4 forms for a user to fill out to gauge their feeling, 
 
 # Structure
 
+These are the main directories.
+
 ```
 ├── server
 │   ├── modules
