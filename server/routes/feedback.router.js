@@ -7,7 +7,7 @@ const pool = require("../modules/pool");
 // router.get("/", (req, res) => {
 //   // Retrieve db and order by id in descending order
 //   // Need for stretch goal only
-//   const queryText = `SELECT * FROM prime_feedback ORDER BY id DESC;`;
+//   const queryText = `SELECT * FROM feedback ORDER BY id DESC;`;
 //   pool
 //     .query(queryText)
 //     .then((response) => {

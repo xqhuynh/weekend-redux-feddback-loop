@@ -24,7 +24,7 @@ function ReviewForm() {
   const postFeedback = () => {
     axios({
       method: "POST",
-      url: "/",
+      url: "/feedback",
       data: feedback,
     })
       .then((response) => {
