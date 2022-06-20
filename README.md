@@ -1,9 +1,103 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# Redux Feedback Loop
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+_Duration: 6 hrs
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+This project consists of 4 forms for a user to fill out to gauge their feeling, understanding, support, as well as any comments they may have. Users can rate each form. After doing so, there will be a review form followed by a successful submission form. After successfully submitting the form, the data is sent and stored on the server. The data is cleared from the client side and the user can choose to give their feedback again if they choose to.
+
+## Screen Shot
+
+![Screen Shot 2022-06-19 at 9 16 10 PM](https://user-images.githubusercontent.com/77410880/174514157-8194f37e-49c0-4fe3-96f9-ee544e1af8fa.png)
+
+![Screen Shot 2022-06-19 at 9 16 39 PM](https://user-images.githubusercontent.com/77410880/174514163-b9d696a3-6495-4ac0-92fb-aba2b019bb1d.png)
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/en/)
+- [React](https://reactjs.org/)
+- [Postgres](https://postgresapp.com/)
+
+## Installation
+
+1. Create the database with the information contained in the data.sql file
+2. Run `npm install`
+3. Run `npm run server`
+4. Run `npm run client` at the same time as the server
+5. A browser will open with the form 
+
+# Structure
+
+```
+├── INSTRUCTIONS.md
+├── README.md
+├── data.sql
+├── package-lock.json
+├── package.json
+├── public
+│   ├── favicon.ico
+│   ├── images
+│   │   └── goat_small.jpg
+│   ├── index.html
+│   └── manifest.json
+├── server
+│   ├── modules
+│   │   └── pool.js
+│   ├── routes
+│   │   └── feedback.router.js
+│   └── server.js
+├── src
+│   ├── components
+│   │   ├── App
+│   │   │   ├── App.css
+│   │   │   └── App.jsx
+│   │   ├── CommentsForm
+│   │   │   └── CommentsForm.jsx
+│   │   ├── FeelingForm
+│   │   │   └── FeelingForm.jsx
+│   │   ├── Header
+│   │   │   └── Header.js
+│   │   ├── Home
+│   │   │   └── Home.jsx
+│   │   ├── ReviewForm
+│   │   │   └── ReviewForm.jsx
+│   │   ├── SuccessForm
+│   │   │   └── SuccessForm.jsx
+│   │   ├── SupportedForm
+│   │   │   └── SupportedForm.jsx
+│   │   └── UnderstandingForm
+│   │       └── UnderstandingForm.jsx
+│   ├── index.css
+│   ├── index.js
+│   └── registerServiceWorker.js
+└── wireframes
+    ├── admin.png
+    ├── comments.png
+    ├── feeling.png
+    ├── page-five.png
+    ├── page-four.png
+    ├── page-one.png
+    ├── page-three.png
+    ├── page-two.png
+    ├── review-active.png
+    ├── review-incomplete.png
+    ├── supported.png
+    └── understanding.png
+```
+
+## Usage
+
+1. To gain experience working with the Redux store
+2. To gain experience using React router and routes
+3. To gain experience using React-redux useSelector and useDispatch hooks
+4. To gain experience with Redux state
+
+## Built With
+
+This project was built with the React framework and Redux library.
+
+## Acknowledgement
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. 
+
+## Support
+If you have suggestions or issues, please email me at xqhuynh@mgmail.com
