@@ -65,11 +65,9 @@ These are the main directories.
 
 ## Usage
 
-1. To gain experience working with the Redux store
-2. To gain experience using React router and routes
-3. To gain experience using React-redux useSelector and useDispatch hooks
-4. To gain experience with Redux state
+This project can be useful to teachers to gauge how their students are feeling about a subject matter, assignment, etc. It can also be useful for employees to gauge how their employees are doing. 
 
+Furthermore, this project can be a great learning resource. Different technologies, framework, and libraries are used in this project. 
 ## Built With
 
 This project was built with the React framework and Redux library.
