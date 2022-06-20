@@ -8,14 +8,15 @@ function SupportedForm() {
   // Need: useHistory, useDispatch, useSelector hooks
   const history = useHistory();
   const dispatch = useDispatch();
-  // useSelector for feedBackDataToStore() in store
   const feedback = useSelector((store) => store.feedBackDataToStore);
 
   // function to handle 'next' button click
+  // conditional statement to make sure number entered is between 0 to 5
+  // and not empty before navigating to next form
   const handleSubmit = (evt) => {
     evt.preventDefault();
     if (feedback.supportedForm >= 0 && feedback.supportedForm <= 5) {
-      // direct to next form with useHistory hook
+      // direct to next form '/comments-form' with useHistory hook
       history.push("/comments-form");
     } else {
       alert("Please enter a number between 0 and 5");
@@ -40,7 +41,7 @@ function SupportedForm() {
           type="number"
           required
         />
-        <button type="submit">Next</button>
+        <button>Next</button>
       </form>
     </>
   );

@@ -12,6 +12,8 @@ function UnderstandingForm() {
   const feedback = useSelector((store) => store.feedBackDataToStore);
 
   // function to handle 'next' button click
+  // conditional statement to make sure number entered is between 0 to 5
+  // and not empty before navigating to next form
   const handleSubmit = (evt) => {
     evt.preventDefault();
     if (feedback.understandingForm >= 0 && feedback.understandingForm <= 5) {
@@ -40,7 +42,7 @@ function UnderstandingForm() {
           type="number"
           required
         />
-        <button type="submit">Next</button>
+        <button>Next</button>
       </form>
     </>
   );

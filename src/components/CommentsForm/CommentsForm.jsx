@@ -1,19 +1,16 @@
 import Header from "../Header/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
-import swal from "sweetalert";
 
 function CommentsForm() {
-  // Need: useHistory, useDispatch, useSelector hooks
+  // Need: useHistory, useDispatch  hooks
   const history = useHistory();
   const dispatch = useDispatch();
-  // useSelector for feedBackDataToStore() in store
-  const feedback = useSelector((store) => store.feedBackDataToStore);
 
   // function to handle 'next' button click
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    // useHistory to go to 'review-form'
     history.push("/review-form");
   };
 
@@ -22,8 +19,9 @@ function CommentsForm() {
       <Header />
       <h3>Any comments you want to leave?</h3>
       <p>Comments?</p>
+      {/* add handleSubmit() in form tag */}
       <form onSubmit={handleSubmit}>
-        {/* use dispatch and set type to 'SET_COMMENTS_FORM' */}
+        {/* use dispatch and set type to 'SET_COMMENTS_FORM' in input */}
         <input
           onChange={(event) =>
             dispatch({
@@ -33,7 +31,7 @@ function CommentsForm() {
           }
           type="text"
         />
-        <button type="submit">Next</button>
+        <button>Next</button>
       </form>
     </>
   );

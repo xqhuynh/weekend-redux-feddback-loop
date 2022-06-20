@@ -7,18 +7,9 @@ import { Provider } from "react-redux";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import logger from "redux-logger";
 
-// Reducer to get feedback data from user
-// const storedFeedback = (state = [], action) => {
-//   switch (action.type) {
-//     // GET dispatch action
-//     case "GET_FEEDBACK_INFO":
-//       return action.payload;
-//     default:
-//       return state;
-//   }
-// };
-
 // Reducer to store feedback object
+// will need 4 objects: feeling, understanding, supported
+// with initial value set to 0 and comments set to empty string
 const feedBackDataToStore = (
   state = {
     feelingForm: 0,
@@ -29,6 +20,7 @@ const feedBackDataToStore = (
   action
 ) => {
   // Switch statement for each form dispatch
+  // Need dispatch to clear form after successful form submission
   switch (action.type) {
     case "SET_FEELING_FORM":
       return { ...state, feelingForm: action.payload };
@@ -50,7 +42,7 @@ const feedBackDataToStore = (
   }
 };
 
-// redux store
+// redux store, try to minimize reducers
 const store = createStore(
   combineReducers({
     feedBackDataToStore,

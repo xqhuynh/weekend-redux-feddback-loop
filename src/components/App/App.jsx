@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./App.css";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 // import components
 import Home from "../Home/Home";
 import FeelingForm from "../FeelingForm/FeelingForm";
@@ -10,8 +10,6 @@ import SupportedForm from "../SupportedForm/SupportedForm";
 import CommentsForm from "../CommentsForm/CommentsForm";
 import ReviewForm from "../ReviewForm/ReviewForm";
 import SuccessForm from "../SuccessForm/SuccessForm";
-
-import { useDispatch } from "react-redux";
 
 function App() {
   return (

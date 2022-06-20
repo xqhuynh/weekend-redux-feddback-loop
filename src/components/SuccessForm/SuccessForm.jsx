@@ -1,18 +1,18 @@
-import { useHistory, Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import axios from "axios";
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 function SuccessForm() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const feedback = useSelector((store) => store.feedBackDataToStore);
 
-  // Handle submit function
+  // Handle submit function w/dispatch action to clear
+  // form data after submit form successful
   const handleSubmit = (evt) => {
     evt.preventDefault();
     dispatch({
       type: "CLEAR_FEEDBACK",
     });
+    // useHistory for home route '/'
     history.push("/");
   };
 

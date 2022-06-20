@@ -1,7 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
-import swal from "sweetalert";
 import axios from "axios";
 
 function ReviewForm() {
@@ -14,13 +12,15 @@ function ReviewForm() {
 
   const onHandleSubmit = (evt) => {
     evt.preventDefault();
+    // useHistory to navigate to '/success-form'
     history.push("/success-form");
     // Call postFeedback() on submit
     postFeedback();
   };
 
   // Axios POST to add data to db after submit button clicked
-  // Takes user back to first form
+  // remember to call this function in onHandleSubmit()
+  // data is 'feedback' from reducer store
   const postFeedback = () => {
     axios({
       method: "POST",
@@ -42,9 +42,7 @@ function ReviewForm() {
       <h3>Understanding: {feedback.understandingForm}</h3>
       <h3>Support: {feedback.supportedForm}</h3>
       <h3>Comments: {feedback.commentsForm}</h3>
-      <button onClick={onHandleSubmit} type="button">
-        Submit
-      </button>
+      <button onClick={onHandleSubmit}>Submit</button>
     </>
   );
 }
