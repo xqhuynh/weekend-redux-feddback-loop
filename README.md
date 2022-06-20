@@ -24,7 +24,7 @@ This project is a feedback/reflection form for users to fill out. Users will go 
 4. Run `npm run client` at the same time as the server
 5. A browser will open with the form 
 
-# Structure
+## Structure
 
 These are the main directories.
 
