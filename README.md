@@ -8,8 +8,7 @@ This project is a feedback/reflection form for users to fill out. Users will go 
 
 ## Screen Shot
 
-![2022-06-20 11 56 49](https://user-images.githubusercontent.com/77410880/174649351-50395c23-c853-433f-b851-b96d1b58c806.gif)
-
+![2022-06-20 12 06 44](https://user-images.githubusercontent.com/77410880/174650475-918edf3c-2c58-48eb-85d2-92fbed0fcdaa.gif)
 
 ### Prerequisites
 
