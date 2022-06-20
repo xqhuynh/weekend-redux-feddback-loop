@@ -4,7 +4,7 @@
 
 _Duration: 6 hrs
 
-This project consists of 4 forms for a user to fill out to gauge their feeling, understanding, support, as well as any comments they may have. Users can rate each form. After doing so, there will be a review form followed by a successful submission form. After successfully submitting the form, the data is sent and stored on the server. The data is cleared from the client side and the user can choose to give their feedback again if they choose to.
+This project is a feedback/reflection form for users to fill out. Users will go through each form and include a rating of how they are feeling, their understanding, the level of support they are receiving, and an option to leave comments. After filling out the form, users can review and submit it. After submission, the data is sent to the server and stored in a local database. 
 
 ## Screen Shot
 
