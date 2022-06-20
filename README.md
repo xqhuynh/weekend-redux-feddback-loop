@@ -29,17 +29,6 @@ This project consists of 4 forms for a user to fill out to gauge their feeling, 
 # Structure
 
 ```
-├── INSTRUCTIONS.md
-├── README.md
-├── data.sql
-├── package-lock.json
-├── package.json
-├── public
-│   ├── favicon.ico
-│   ├── images
-│   │   └── goat_small.jpg
-│   ├── index.html
-│   └── manifest.json
 ├── server
 │   ├── modules
 │   │   └── pool.js
@@ -69,20 +58,7 @@ This project consists of 4 forms for a user to fill out to gauge their feeling, 
 │   │       └── UnderstandingForm.jsx
 │   ├── index.css
 │   ├── index.js
-│   └── registerServiceWorker.js
-└── wireframes
-    ├── admin.png
-    ├── comments.png
-    ├── feeling.png
-    ├── page-five.png
-    ├── page-four.png
-    ├── page-one.png
-    ├── page-three.png
-    ├── page-two.png
-    ├── review-active.png
-    ├── review-incomplete.png
-    ├── supported.png
-    └── understanding.png
+
 ```
 
 ## Usage
