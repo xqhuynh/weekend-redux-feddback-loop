@@ -12,6 +12,9 @@ This project is a feedback/reflection form for users to fill out. Users will go 
 
 ![Screen Shot 2022-06-19 at 9 16 39 PM](https://user-images.githubusercontent.com/77410880/174514163-b9d696a3-6495-4ac0-92fb-aba2b019bb1d.png)
 
+![2022-06-20 11 56 49](https://user-images.githubusercontent.com/77410880/174649351-50395c23-c853-433f-b851-b96d1b58c806.gif)
+
+
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
